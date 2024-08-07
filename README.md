@@ -1,6 +1,6 @@
 # MATRIX Transpose
 
-![MATRIX Transpose]()
+## ![MATRIX Transpose](images.png)
 
 Welcome to the MATRIX Transpose project! This web application allows users to easily transpose both square and rectangular matrices directly in their browser. It's a simple and intuitive tool designed with responsiveness in mind, ensuring it works smoothly on devices of all sizes.
 
