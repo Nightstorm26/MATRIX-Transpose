@@ -28,7 +28,9 @@ function transposeMatrix()
         }
     }
 
-    let resultHTML = '<table>';
+    let resultHTML="<h3>Transposed Matrix:</h3>";
+    resultHTML += "<br>";
+    resultHTML += '<table>';
     for (let i = 0; i < numCols; i++) {
         resultHTML += '<tr>';
         for (let j = 0; j < numRows; j++) {

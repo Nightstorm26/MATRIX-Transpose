@@ -20,12 +20,14 @@
         <br>
         <div id="matrixContainer"></div>
         
-        <button onclick="transposeMatrix()">Transpose Matrix</button>
+        <!-- <button onclick="transposeMatrix()">Transpose Matrix</button>
         <button onclick="invertMatrix()">Invert Matrix</button>
         <button onclick="calculateDeterminant()">Determinant</button>
-        <button onclick="traceMatrix()">Trace</button>
+        <button onclick="traceMatrix()">Trace</button> -->
+        <button onclick="performAllOperations()">Calculate</button>
         
-        <h3>Transposed Matrix:</h3>
+        <div id="allResults"></div>
+        <!-- <h3>Transposed Matrix:</h3>
         <div id="transposeResult"></div>
         
         <h3>Inverse Matrix:</h3>
@@ -35,12 +37,13 @@
         <div id="determinantResult"></div>
 
         <h3>Trace of the Matrix:</h3>
-        <div id="traceResult"></div>
+        <div id="traceResult"></div> -->
     </div>
     <script src="generateMat.js"></script>
-    <script src="transposeMat.js"></script>
+    <!-- <script src="transposeMat.js"></script>
     <script src="invertMat.js"></script>
-    <script src="traceMat.js"></script>
+    <script src="traceMat.js"></script> -->
+    <script src="matrixOperations.js"></script>
     <script src="darkmodetoggle.js"></script>
     <script>
         window.onload = generateMatrix;
