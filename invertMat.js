@@ -1,4 +1,4 @@
-function invertMatrix() {
+export function invertMatrix() {
     const isSquareMatrix = window.location.href.includes('square.html');
     let numRows, numCols;
     
@@ -71,7 +71,7 @@ function determinant(matrix) {
 }
 
 //Determinant Call Function
-function calculateDeterminant() {
+export function calculateDeterminant() {
     const isSquareMatrix = document.getElementById('matrixSize') !== null;
     let numRows, numCols;
     

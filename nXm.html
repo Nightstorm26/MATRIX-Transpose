@@ -22,32 +22,27 @@
         <button onclick="generateMatrix()" id="gen-m">Generate Matrix</button>
         <br>
         <div id="matrixContainer"></div>
-        
-        <!-- <button onclick="transposeMatrix()">Transpose Matrix</button>
-        <button onclick="invertMatrix()">Invert Matrix</button>
-        <button onclick="calculateDeterminant()">Determinant</button>
-        <button onclick="traceMatrix()">Trace</button> -->
-        <button onclick="performAllOperations()">Calculate</button>
-        
-        <div id="allResults"></div>
-        <!-- <div id="transposeResult"></div>
-        
-        <h3>Inverse Matrix:</h3>
-        <div id="inverseResult"></div>
 
-        <h3>Determinant of Matrix:</h3>
-        <div id="determinantResult"></div>
+        <button id="calculateButton">Calculate</button>
 
-        <h3>Trace of the Matrix:</h3>
-        <div id="traceResult"></div> -->
+        <div id="allResults">
+            <div id="transposeResult"></div>
+            <div id="inverseResult"></div>
+            <div id="determinantResult"></div>
+            <div id="traceResult"></div>
+            <div id="eigenResult"></div>
+        </div>
     </div>
+    
     <script src="generateMat.js"></script>
-    <!-- <script src="transposeMat.js"></script>
-    <script src="invertMat.js"></script>
-    <script src="traceMat.js"></script> -->
-    <script src="matrixOperations.js"></script>
     <script src="darkmodetoggle.js"></script>
+    <script type="module">
+        import { performAllOperations } from './matrixOperations.js';
+        
+        document.getElementById('calculateButton').addEventListener('click', performAllOperations);
+    </script>
     <script>
+        
         window.onload = generateMatrix;
     </script>
 </body>

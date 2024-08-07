@@ -1,4 +1,4 @@
-function transposeMatrix() 
+export function transposeMatrix() 
 {
     const isSquareMatrix = window.location.href.includes('square.html');
     let numRows, numCols;
