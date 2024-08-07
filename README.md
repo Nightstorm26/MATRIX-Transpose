@@ -18,3 +18,13 @@ First, clone the repository to your local machine using Git:
 
 ```bash
 git clone https://github.com/Nightstorm26/MATRIX-Transpose.git
+```
+### 2. open **index.html**
+
+## Contributors
+
+22BCE10422	Riya Singh
+22BCE10423	Kaustubh Agrawal
+22BCE10424	Aryan Kumar Singh
+22BCE10881	Bidisha Biswas
+
