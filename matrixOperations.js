@@ -31,6 +31,10 @@ export function traceMatrix() {
     }
 
     // Display the result
-    document.getElementById('traceResult').innerHTML = `The trace of the matrix is: ${trace}`;
+    let resultHTML="<h3>Trace of the Matrix:</h3>";
+    resultHTML += `The trace of the matrix is: ${trace}`;
+    resultHTML += "<br>";
+
+    document.getElementById('traceResult').innerHTML =resultHTML ;
 }
 

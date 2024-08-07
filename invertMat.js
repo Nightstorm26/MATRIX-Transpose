@@ -44,8 +44,9 @@ export function invertMatrix() {
             inv[i][j] = adj[i][j] / det;
         }
     }
-
-    let resultHTML = '<table>';
+    let resultHTML="<h3>Inverted Matrix:</h3>";
+    resultHTML += "<br>";
+    resultHTML += '<table>';
     for (let i = 0; i < numRows; i++) {
         resultHTML += '<tr>';
         for (let j = 0; j < numCols; j++) {
@@ -60,14 +61,25 @@ export function invertMatrix() {
 
 function determinant(matrix) {
     const n = matrix.length;
-    if (n === 1) return matrix[0][0];
-    if (n === 2) return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+    if (n === 1) {
+        return matrix[0][0];
+    }
+    if (n === 2) {
+        return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+    }
 
     let det = 0;
     for (let j = 0; j < n; j++) {
-        det += matrix[0][j] * cofactor(matrix, 0, j);
+        det += Math.pow(-1, j) * matrix[0][j] * determinant(minor(matrix, 0, j));
     }
     return det;
+}
+
+function minor(matrix, row, col) {
+    return matrix
+        .filter((_, i) => i !== row)
+        .map(row => row.filter((_, j) => j !== col));
 }
 
 //Determinant Call Function
@@ -83,7 +95,7 @@ export function calculateDeterminant() {
     }
 
     if (numRows !== numCols) {
-        document.getElementById('determinantResult').innerHTML = "Non-square Matrices doesn't have a Determinant.";
+        document.getElementById('determinantResult').innerHTML = "<h3>Determinant of the Matrix:</h3>Non-square matrices don't have a determinant.";
         return;
     }
 
@@ -94,15 +106,31 @@ export function calculateDeterminant() {
         matrix[i] = [];
         for (let j = 0; j < numCols; j++) {
             const cell = document.getElementById(`cell-${i}-${j}`);
+            if (!cell || isNaN(Number(cell.value))) {
+                document.getElementById('determinantResult').innerHTML = "<h3>Determinant of the Matrix:</h3>Error: Invalid input in the matrix.";
+                return;
+            }
             matrix[i][j] = Number(cell.value);
         }
     }
 
     // Calculate the determinant
-    const det = determinant(matrix);
+    try {
+        const det = determinant(matrix);
 
-    // Display the result
-    document.getElementById('determinantResult').innerHTML = `The determinant is: ${det}`;
+        // Display the result
+        let resultHTML = "<h3>Determinant of the Matrix:</h3>";
+        if (Math.abs(det) < 1e-10) {
+            resultHTML += "The determinant is approximately zero (matrix is singular).";
+        } else if (Math.abs(det) > 1e10 || Math.abs(det) < 1e-10) {
+            resultHTML += `The determinant is: ${det.toExponential(4)}`;
+        } else {
+            resultHTML += `The determinant is: ${det.toFixed(4)}`;
+        }
+        document.getElementById('determinantResult').innerHTML = resultHTML;
+    } catch (error) {
+        document.getElementById('determinantResult').innerHTML = "<h3>Determinant of the Matrix:</h3>Error calculating determinant. Please check your inputs.";
+    }
 }
 
 function cofactor(matrix, row, col) {
