@@ -24,7 +24,7 @@ git clone https://github.com/Nightstorm26/MATRIX-Transpose.git
 ## Contributors
 
 #### 22BCE10422	Riya Singh
-#### 22BCE10423	Kaustubh Agrawal
-#### 22BCE10424	Aryan Kumar Singh
+#### 22BCE10879	Kaustubh Agrawal
+#### 22BCE11389	Aryan Kumar Singh
 #### 22BCE10881	Bidisha Biswas
 
